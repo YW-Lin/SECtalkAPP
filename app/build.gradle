@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.yxc.websocketclientdemo"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        buildToolsVersion "26.0.2"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile 'com.alibaba:fastjson:1.2.24'
+    compile 'com.alibaba:fastjson:1.2.24'
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'org.java-websocket:Java-WebSocket:1.4.0'
+    compile 'com.andrognito.patternlockview:patternlockview:1.0.0'
+    compile 'com.andrognito.patternlockview:patternlockview-reactive:1.0.0'
+    compile 'com.zhy:okhttputils:2.6.2'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.36'
+    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.flyco.dialog:FlycoDialog_Lib:1.2.2@aar'
+    compile 'com.flyco.animation:FlycoAnimation_Lib:1.0.0@aar'
+    compile 'com.nineoldandroids:library:2.4.0'
+}

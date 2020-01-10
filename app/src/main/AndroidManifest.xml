@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yxc.websocket">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name="com.yxc.websocket.base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <service
+            android:name="com.yxc.websocket.im.JWebSocketClientService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="com.yxc.websocket.im.JWebSocketClientService$GrayInnerService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":gray" />
+
+        <activity
+            android:name="com.yxc.websocket.activity.LaucherActivity"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.yxc.websocket.activity.RegisterActivity" />
+        <activity android:name="com.yxc.websocket.activity.MainActivity" />
+        <activity
+            android:name="com.yxc.websocket.activity.LoginActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.yxc.websocket.activity.MessageListActivity"
+            android:launchMode="singleTask" />
+        <activity android:name="com.yxc.websocket.activity.SettingActivity" />
+    </application>
+
+</manifest>
